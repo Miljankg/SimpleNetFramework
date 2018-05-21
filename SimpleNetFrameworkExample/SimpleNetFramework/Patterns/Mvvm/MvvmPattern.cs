@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using SimpleNetFramework.Patterns.Mvvm.Layers.Logic;
 using SimpleNetFramework.Patterns.Mvvm.Layers.ViewModel;
+using SimpleNetFramework.Utils.Services;
 
 namespace SimpleNetFramework.Patterns.Mvvm
 {

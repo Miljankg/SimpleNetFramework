@@ -4,6 +4,7 @@ using LightInject;
 using SimpleNetFramework.Patterns;
 using SimpleNetFramework.Patterns.Mvvm;
 using SimpleNetFramework.Utils.CSharpObjectHandling;
+using SimpleNetFramework.Utils.Services;
 
 namespace SimpleNetFramework
 {
@@ -60,6 +61,8 @@ namespace SimpleNetFramework
         {
             if (_called) { throw new InvalidOperationException("Boostrapper called already."); }
 
+            this.RegisterSystemInstances(_svcContainer);
+
             var loadedTypes = _pattern.Load();
 
             foreach (var loadedType in loadedTypes)
@@ -68,6 +71,11 @@ namespace SimpleNetFramework
             }
 
             _called = true;
+        }
+
+        private void RegisterSystemInstances(IServiceContainer svcContainer)
+        {
+            svcContainer.RegisterInstance(typeof(ISfSvcLocator), new SfSvcLocator(svcContainer));
         }
     }
 }

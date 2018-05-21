@@ -58,8 +58,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ViewModel\IViewModelLocator.cs" />
     <Compile Include="ViewModel\TestVm\ITestVm.cs" />
     <Compile Include="ViewModel\TestVm\TestVm.cs" />
+    <Compile Include="ViewModel\ViewModelLocator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Logic\TestLogic\ITestLogic.cs" />
