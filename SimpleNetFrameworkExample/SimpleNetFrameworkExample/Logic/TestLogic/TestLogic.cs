@@ -15,7 +15,7 @@ namespace SimpleNetFrameworkExample.Logic.TestLogic
 
         public string Do()
         {
-            return "THIS IS FROM TTwoLogic: " + _l.GetSome();
+            return "TestLogic Says (from TTwoLogic) => " + _l.GetSome();
         }
     }
 }

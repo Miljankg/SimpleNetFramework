@@ -45,8 +45,6 @@ namespace SimpleNetFramework.Patterns.Mvvm.Layers.ViewModel
 
         public override Dictionary<Type, Type> Load()
         {
-            var typesToReturn = new Dictionary<Type, Type>();
-            
             var namespaceToSearch = RootNamespace.Append(Namespace.FromString("ViewModel"));
 
             var allTypes = Assembly.GetTypes();
@@ -58,42 +56,11 @@ namespace SimpleNetFramework.Patterns.Mvvm.Layers.ViewModel
 
             if (!vmTypes.Any()) { throw new InvalidOperationException("There are no ViewModels defined."); }
 
-            // Load ViewModelLocator
-            var vmLocType = GetViewModelLocatorType(allTypes, namespaceToSearch);
-
-            if (vmLocType != null)
-            {
-                typesToReturn.Add(vmLocType.Item1, vmLocType.Item2);    
-            }
-
             // LoadViewModels
-            var loadedVmTypes = this.LoadTypes(
+            return LoadTypes(
                 vmTypes,
                 typeof(IViewModel),
                 new List<Type>() { typeof(ILogic) });
-
-            return typesToReturn
-                .Concat(loadedVmTypes)
-                .ToDictionary(k => k.Key, v => v.Value);
-        }
-
-        private Tuple<Type, Type> GetViewModelLocatorType(IEnumerable<Type> loadedTypes, INamespace rootNamespace)
-        {
-            var viewModelLocators = loadedTypes
-                .Where(t => typeof(ViewModelLocator).IsAssignableFrom(t) && t.Namespace == rootNamespace.ToString())
-                .ToList();
-
-            if (viewModelLocators.Count > 1) { throw new InvalidOperationException("More than one ViewModelLocator detected."); }
-
-            if (!viewModelLocators.Any()) { return null; }
-
-            var vmLocType = viewModelLocators[0];
-
-            var dedicatedInterface = GetDedicatedInterface(vmLocType);
-
-            if (dedicatedInterface == null) { throw new InvalidOperationException("ViewModelLocator needs to have dedicated interface."); }
-
-            return Tuple.Create(dedicatedInterface, vmLocType);
         }
     }
 }

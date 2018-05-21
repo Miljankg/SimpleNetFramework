@@ -1,15 +1,11 @@
 ﻿using SimpleNetFramework.Utils.Services;
 using SimpleNetFrameworkExample.ViewModel.TestVm;
+using SimpleNetFramework.Patterns.Mvvm.Layers.ViewModel;
 
 namespace SimpleNetFrameworkExample.ViewModel
 {
-    class ViewModelLocator : SimpleNetFramework.Patterns.Mvvm.Layers.ViewModel.ViewModelLocator, IViewModelLocator
+    public class ViewModelLocator : ViewModelLocatorBase
     {
-        public ViewModelLocator(ISfSvcLocator sfSvcLocator) 
-            : base(sfSvcLocator)
-        {
-        }
-
-        public ITestVm TestViewModel => SvcContainer.GetInstance<ITestVm>();
+        public ITestVm TestViewModel => SfSvcLocator.Instance.GetInstance<ITestVm>();
     }
 }

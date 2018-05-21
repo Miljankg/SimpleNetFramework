@@ -50,9 +50,12 @@
     <Compile Include="Patterns\Mvvm\Layers\Logic\LogicLayer.cs" />
     <Compile Include="Patterns\Mvvm\Layers\ViewModel\IViewModel.cs" />
     <Compile Include="Patterns\Mvvm\Layers\ViewModel\IViewModelLayer.cs" />
-    <Compile Include="Patterns\Mvvm\Layers\ViewModel\IViewModelLocator.cs" />
+    <Compile Include="Patterns\Mvvm\Layers\ViewModel\IViewModelLocatorBase.cs" />
     <Compile Include="Patterns\Mvvm\Layers\ViewModel\ViewModelLayer.cs" />
-    <Compile Include="Patterns\Mvvm\Layers\ViewModel\ViewModelLocator.cs" />
+    <Compile Include="Patterns\Mvvm\Layers\ViewModel\ViewModelLocatorBase.cs" />
+    <Compile Include="Patterns\Mvvm\Layers\View\IView.cs" />
+    <Compile Include="Patterns\Mvvm\Layers\View\IViewLayer.cs" />
+    <Compile Include="Patterns\Mvvm\Layers\View\ViewLayer.cs" />
     <Compile Include="Patterns\Mvvm\MvvmPatternFactory.cs" />
     <Compile Include="Utils\ErrorHandling\Exceptions.cs" />
     <Compile Include="IBootstrapper.cs" />

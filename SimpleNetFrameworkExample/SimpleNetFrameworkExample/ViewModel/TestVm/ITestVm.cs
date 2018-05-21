@@ -2,8 +2,8 @@
 
 namespace SimpleNetFrameworkExample.ViewModel.TestVm
 {
-    interface ITestVm : IViewModel
+    public interface ITestVm : IViewModel
     {
-        void Do();
+        string SomeText { get; }
     }
 }

@@ -12,9 +12,6 @@ namespace SimpleNetFrameworkExample.ViewModel.TestVm
             _logic = logic;
         }
         
-        public void Do()
-        {
-            Console.WriteLine(_logic.Do());
-        }
+        public string SomeText => "ViewModelSays =>" +_logic.Do();
     }
 }

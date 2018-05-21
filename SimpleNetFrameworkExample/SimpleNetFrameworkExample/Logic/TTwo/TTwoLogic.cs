@@ -10,7 +10,7 @@ namespace SimpleNetFrameworkExample.Logic.TTwo
     {
         public string GetSome()
         {
-            return "YEAAAA";
+            return "I am LOWEST dependency!";
         }
     }
 }

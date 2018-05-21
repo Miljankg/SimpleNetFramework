@@ -1,8 +1,8 @@
 ﻿using System.Reflection;
 using SimpleNetFramework.Patterns.Mvvm.Layers.Logic;
+using SimpleNetFramework.Patterns.Mvvm.Layers.View;
 using SimpleNetFramework.Patterns.Mvvm.Layers.ViewModel;
 using SimpleNetFramework.Utils.CSharpObjectHandling;
-using SimpleNetFramework.Utils.Services;
 
 namespace SimpleNetFramework.Patterns.Mvvm
 {
@@ -12,8 +12,9 @@ namespace SimpleNetFramework.Patterns.Mvvm
         {
             var logicLayer = new LogicLayer(rootNamespace, assembly);
             var viewModelLayer = new ViewModelLayer(rootNamespace, assembly);
+            var viewLayer = new ViewLayer(rootNamespace, assembly);
 
-            return new MvvmPattern(logicLayer, viewModelLayer);
+            return new MvvmPattern(logicLayer, viewModelLayer, viewLayer);
         }
     }
 }

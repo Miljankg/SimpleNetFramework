@@ -58,10 +58,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ViewModel\IViewModelLocator.cs" />
     <Compile Include="ViewModel\TestVm\ITestVm.cs" />
     <Compile Include="ViewModel\TestVm\TestVm.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="View\Main\IMainView.cs" />
+    <Compile Include="View\Main\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Logic\TestLogic\ITestLogic.cs" />
@@ -99,6 +102,12 @@
       <Project>{136ec502-a6a7-4988-9f9f-ebe66c528b80}</Project>
       <Name>SimpleNetFramework</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="View\Main\MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
