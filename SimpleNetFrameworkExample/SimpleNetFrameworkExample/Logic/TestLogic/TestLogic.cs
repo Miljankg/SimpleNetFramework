@@ -13,9 +13,9 @@ namespace SimpleNetFrameworkExample.Logic.TestLogic
             _l = l;
         }
 
-        public void Do()
+        public string Do()
         {
-            Console.WriteLine(_l.GetSome());
+            return "THIS IS FROM TTwoLogic: " + _l.GetSome();
         }
     }
 }

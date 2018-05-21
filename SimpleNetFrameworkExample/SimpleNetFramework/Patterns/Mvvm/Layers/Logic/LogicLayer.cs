@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using LightInject;
 using SimpleNetFramework.Utils.CSharpObjectHandling;
 using SimpleNetFramework.Utils.ErrorHandling;
 
-namespace SimpleNetFramework.Patterns.Mvvm.Layers
+namespace SimpleNetFramework.Patterns.Mvvm.Layers.Logic
 {
     class LogicLayer : Layer, ILogicLayer
     {

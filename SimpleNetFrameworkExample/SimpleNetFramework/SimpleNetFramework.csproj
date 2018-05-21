@@ -46,13 +46,16 @@
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Patterns\ILayer.cs" />
     <Compile Include="Patterns\Layer.cs" />
-    <Compile Include="Patterns\Mvvm\Layers\ILogicLayer.cs" />
-    <Compile Include="Patterns\Mvvm\Layers\LogicLayer.cs" />
+    <Compile Include="Patterns\Mvvm\Layers\Logic\ILogicLayer.cs" />
+    <Compile Include="Patterns\Mvvm\Layers\Logic\LogicLayer.cs" />
+    <Compile Include="Patterns\Mvvm\Layers\ViewModel\IViewModel.cs" />
+    <Compile Include="Patterns\Mvvm\Layers\ViewModel\IViewModelLayer.cs" />
+    <Compile Include="Patterns\Mvvm\Layers\ViewModel\ViewModelLayer.cs" />
     <Compile Include="Patterns\Mvvm\MvvmPatternFactory.cs" />
     <Compile Include="Utils\ErrorHandling\Exceptions.cs" />
     <Compile Include="IBootstrapper.cs" />
     <Compile Include="Utils\Logging\ILogger.cs" />
-    <Compile Include="Patterns\Mvvm\Layers\ILogic.cs" />
+    <Compile Include="Patterns\Mvvm\Layers\Logic\ILogic.cs" />
     <Compile Include="Utils\CSharpObjectHandling\INamespace.cs" />
     <Compile Include="Patterns\IPattern.cs" />
     <Compile Include="Utils\CSharpObjectHandling\Namespace.cs" />
@@ -63,5 +66,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

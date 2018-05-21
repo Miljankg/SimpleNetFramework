@@ -2,6 +2,7 @@
 using SimpleNetFramework;
 using SimpleNetFramework.Utils.CSharpObjectHandling;
 using SimpleNetFrameworkExample.Logic.TestLogic;
+using SimpleNetFrameworkExample.ViewModel.TestVm;
 
 namespace SimpleNetFrameworkExample
 {
@@ -14,7 +15,7 @@ namespace SimpleNetFrameworkExample
         {
             var bootstrapp = BootstrapperFactory.Create(AvailablePatterns.Mvvm, Namespace.FromCurrentCaller());
 
-            var testLogic = bootstrapp.Boot<ITestLogic>();
+            var testLogic = bootstrapp.Boot<ITestVm>();
 
             testLogic.Do();
         }
